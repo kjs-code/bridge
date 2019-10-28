@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.klnm.bridge.mapper.hoc.HocUserMapper">
+
+    <insert id="insertUser" parameterType="HashMap" >
+        INSERT INTO `HOC`.`USER_MAIN`
+            (`EMAIL`, `ID`, `PASSWORD`)
+        VALUES
+            (#{email}, #{id}, #{pw});
+    </insert>
+
+    <select id="checkId" parameterType="HashMap" resultType="int">
+        SELECT COUNT(ID) FROM `HOC`.`USER_MAIN`
+        WHERE ID = #{id};
+    </select>
+
+</mapper>
